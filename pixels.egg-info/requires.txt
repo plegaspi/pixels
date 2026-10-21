@@ -1,0 +1,5 @@
+hdf5plugin
+
+[cli]
+
+[gui]

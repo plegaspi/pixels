@@ -1,0 +1,46 @@
+0:
+  dclk_hz: 41600000
+  odr_high_time: 6
+  odr_wait_first: 1
+  odr_low_time: 24
+  odr_wait_last: 9
+  odr_freq: 1014634
+
+1:
+  dclk_hz: 42352941
+  odr_high_time: 6
+  odr_wait_first: 1
+  odr_low_time: 24
+  odr_wait_last: 25
+  odr_freq: 743034
+
+2:
+  dclk_hz: 18757515
+  odr_high_time: 4
+  odr_wait_first: 1
+  odr_low_time: 24
+  odr_wait_last: 24
+  odr_freq: 347361
+
+3:
+  dclk_hz: 50053476
+  odr_high_time: 7
+  odr_wait_first: 1
+  odr_low_time: 24
+  odr_wait_last: 168
+  odr_freq: 249022
+
+  # 4:
+  #   dclk_hz: 48000002
+  #   odr_high_time: 7 # 6 hits 499.956 kHz
+  #   odr_wait_first: 1
+  #   odr_low_time: 24
+  #   odr_wait_last: 68 # 63 hits 499.956 kHz
+  #   odr_freq: 500021
+4:
+  dclk_hz: 40000002
+  odr_high_time: 9 #9/45 within 2-3 #8/6 within 2-4 # 7/47
+  odr_wait_first: 1
+  odr_low_time: 24
+  odr_wait_last: 45 #45 within 2-3 #46 within 2-4 #47 within 5
+  odr_freq: 500000

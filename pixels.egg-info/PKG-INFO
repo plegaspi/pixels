@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: pixels
+Version: 2026.0.0
+Author-email: Pradyun Gedam <pradyun@example.com>, Tzu-Ping Chung <tzu-ping@example.com>
+Maintainer-email: Brett Cannon <brett@example.com>
+Classifier: Programming Language :: Python
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: hdf5plugin
+Provides-Extra: gui
+Provides-Extra: cli

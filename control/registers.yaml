@@ -1,0 +1,402 @@
+registers:
+  - reg: 0x00
+    name: INTERFACE_CONFIG_A
+    bits: {7: SOFT_RESET, 6: Reserved, 5: ADDRESS_ASCENSION_BIT, 4: SDO_ACTIVE_BIT, 3: SDO_ACTIVE_BIT_MIRROR, 2: ADDRESS_ASCENSION_BIT_MIRROR, 1: Reserved, 0: SOFT_RESET_MIRROR}
+    reset: 0x18
+    rw: R/W
+
+  - reg: 0x01
+    name: INTERFACE_CONFIG_B
+    bits: {7: SINGLE_INSTR, 6: Reserved, 5: MASTER_SLAVE_RD_CTRL, 4: Reserved, 3: Reserved, 2: Reserved, 1: DIG_IF_RESET, 0: Reserved}
+    reset: 0x80
+    rw: R/W
+
+  - reg: 0x02
+    name: DEVICE_CONFIG
+    bits: {7: Reserved, 6: Reserved, 5: OP_IN_PROGRESS, 4: NO_CHIP_ERR, 3: Reserved, 2: Reserved, 1: Reserved, 0: POWER_MODE}
+    reset: 0xD0
+    rw: R/W
+
+  - reg: 0x03
+    name: CHIP_TYPE
+    bits: {7: CHIP_TYPE, 6: CHIP_TYPE, 5: CHIP_TYPE, 4: CHIP_TYPE, 3: CHIP_TYPE, 2: CHIP_TYPE, 1: CHIP_TYPE, 0: CHIP_TYPE}
+    reset: 0x07
+    rw: R
+
+  - reg: 0x04
+    name: PRODUCT_ID_LSB
+    bits: {7: "PRODUCT_ID[7]", 6: "PRODUCT_ID[6]", 5: "PRODUCT_ID[5]", 4: "PRODUCT_ID[4]", 3: "PRODUCT_ID[3]", 2: "PRODUCT_ID[2]", 1: "PRODUCT_ID[1]", 0: "PRODUCT_ID[0]"}
+    reset: N/A
+    rw: R
+
+  - reg: 0x05
+    name: PRODUCT_ID_MSB
+    bits: {7: "PRODUCT_ID[15]", 6: "PRODUCT_ID[14]", 5: "PRODUCT_ID[13]", 4: "PRODUCT_ID[12]", 3: "PRODUCT_ID[11]", 2: "PRODUCT_ID[10]", 1: "PRODUCT_ID[9]", 0: "PRODUCT_ID[8]"}
+    reset: N/A
+    rw: R
+
+  - reg: 0x06
+    name: CHIP_GRADE
+    bits: {7: PRODUCT_GRADE, 6: PRODUCT_GRADE, 5: PRODUCT_GRADE, 4: PRODUCT_GRADE, 3: DEVICE_VERSION, 2: DEVICE_VERSION, 1: DEVICE_VERSION, 0: DEVICE_VERSION}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x07
+    name: SILICON_REV
+    bits: {7: SILICON_REVISION_ID, 6: SILICON_REVISION_ID, 5: SILICON_REVISION_ID, 4: SILICON_REVISION_ID, 3: SILICON_REVISION_ID, 2: SILICON_REVISION_ID, 1: SILICON_REVISION_ID, 0: SILICON_REVISION_ID}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x0A
+    name: SCRATCH_PAD
+    bits: {7: SCRATCH_PAD, 6: SCRATCH_PAD, 5: SCRATCH_PAD, 4: SCRATCH_PAD, 3: SCRATCH_PAD, 2: SCRATCH_PAD, 1: SCRATCH_PAD, 0: SCRATCH_PAD}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x0B
+    name: SPI_REVISION
+    bits: {7: SPI_REVISION_NUMBER, 6: SPI_REVISION_NUMBER, 5: SPI_REVISION_NUMBER, 4: SPI_REVISION_NUMBER, 3: SPI_REVISION_NUMBER, 2: SPI_REVISION_NUMBER, 1: SPI_REVISION_NUMBER, 0: SPI_REVISION_NUMBER}
+    reset: 0x02
+    rw: R
+
+  - reg: 0x0C
+    name: VENDOR_ID_LSB
+    bits: {7: "VENDOR_ID[7]", 6: "VENDOR_ID[6]", 5: "VENDOR_ID[5]", 4: "VENDOR_ID[4]", 3: "VENDOR_ID[3]", 2: "VENDOR_ID[2]", 1: "VENDOR_ID[1]", 0: "VENDOR_ID[0]"}
+    reset: 0x56
+    rw: R
+
+  - reg: 0x0D
+    name: VENDOR_ID_MSB
+    bits: {7: "VENDOR_ID[15]", 6: "VENDOR_ID[14]", 5: "VENDOR_ID[13]", 4: "VENDOR_ID[12]", 3: "VENDOR_ID[11]", 2: "VENDOR_ID[10]", 1: "VENDOR_ID[9]", 0: "VENDOR_ID[8]"}
+    reset: 0x04
+    rw: R
+
+  - reg: 0x0E
+    name: STREAM_MODE
+    bits: {7: STREAM_MODE_BITS, 6: STREAM_MODE_BITS, 5: STREAM_MODE_BITS, 4: STREAM_MODE_BITS, 3: STREAM_MODE_BITS, 2: STREAM_MODE_BITS, 1: STREAM_MODE_BITS, 0: STREAM_MODE_BITS}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x0F
+    name: TRANSFER_REGISTER
+    bits: {7: Reserved, 6: Reserved, 5: Reserved, 4: Reserved, 3: Reserved, 2: Reserved, 1: Reserved, 0: MASTER_SLAVE_TX_BIT}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x10
+    name: DEVICE_CONFIG_1
+    bits: {7: Reserved, 6: Reserved, 5: Reserved, 4: AA_MODE, 3: SDO_PIN_SRC_SEL, 2: REFIN_GAIN_CORR_EN, 1: XCLKOUT_EN}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x11
+    name: DATA_PACKET_CONFIG
+    bits: {7: CRC_POLY_RST_SEL, 6: Reserved, 5: Frame, 4: Frame, 3: DCLK_FREQ_SEL, 2: DCLK_FREQ_SEL, 1: DCLK_FREQ_SEL, 0: DCLK_FREQ_SEL}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x12
+    name: DIGITAL_INTERFACE_CONFIG
+    bits: {7: DAISY_CHAIN_DEV_NUM, 6: DAISY_CHAIN_DEV_NUM, 5: DAISY_CHAIN_DEV_NUM, 4: AVG_SEL, 3: AVG_SEL, 2: Format, 1: Format}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x13
+    name: POWER_DOWN_CONTROL
+    bits: {7: Reserved, 6: PWRDN_CH3, 5: PWRDN_CH2, 4: PWRDN_CH1, 3: PWRDN_CH0, 2: Reserved, 1: PWRDN_LDO, 0: SLEEP_MODE_EN}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x14
+    name: RESERVED
+    bits: {7: Reserved, 6: Reserved, 5: Reserved, 4: Reserved, 3: Reserved, 2: Reserved, 1: Reserved, 0: Reserved}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x15
+    name: DEVICE_STATUS
+    bits: {7: Reserved, 6: STAT_DCLKMODE, 5: STAT_DCLKIO, 4: STAT_MODE, 3: STAT_CLKSEL, 2: STAT_FUSE_ECC, 1: STAT_PLL_LOCK}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x16
+    name: ODR_VAL_INT_LSB
+    bits: {7: "ODR_VAL_INT[7]", 6: "ODR_VAL_INT[6]", 5: "ODR_VAL_INT[5]", 4: "ODR_VAL_INT[4]", 3: "ODR_VAL_INT[3]", 2: "ODR_VAL_INT[2]", 1: "ODR_VAL_INT[1]", 0: "ODR_VAL_INT[0]"}
+    reset: 0x40
+    rw: R/W
+
+  - reg: 0x17
+    name: ODR_VAL_INT_MID
+    bits: {7: "ODR_VAL_INT[15]", 6: "ODR_VAL_INT[14]", 5: "ODR_VAL_INT[13]", 4: "ODR_VAL_INT[12]", 3: "ODR_VAL_INT[11]", 2: "ODR_VAL_INT[10]", 1: "ODR_VAL_INT[9]", 0: "ODR_VAL_INT[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x18
+    name: ODR_VAL_INT_MSB
+    bits: {7: "ODR_VAL_INT[23]", 6: "ODR_VAL_INT[22]", 5: "ODR_VAL_INT[21]", 4: "ODR_VAL_INT[20]", 3: "ODR_VAL_INT[19]", 2: "ODR_VAL_INT[18]", 1: "ODR_VAL_INT[17]", 0: "ODR_VAL_INT[16]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x19
+    name: ODR_VAL_FLT_LSB
+    bits: {7: "ODR_VAL_FLT[7]", 6: "ODR_VAL_FLT[6]", 5: "ODR_VAL_FLT[5]", 4: "ODR_VAL_FLT[4]", 3: "ODR_VAL_FLT[3]", 2: "ODR_VAL_FLT[2]", 1: "ODR_VAL_FLT[1]", 0: "ODR_VAL_FLT[0]"}
+    reset: 0x72
+    rw: R/W
+
+  - reg: 0x1A
+    name: ODR_VAL_FLT_MID0
+    bits: {7: "ODR_VAL_FLT[15]", 6: "ODR_VAL_FLT[14]", 5: "ODR_VAL_FLT[13]", 4: "ODR_VAL_FLT[12]", 3: "ODR_VAL_FLT[11]", 2: "ODR_VAL_FLT[10]", 1: "ODR_VAL_FLT[9]", 0: "ODR_VAL_FLT[8]"}
+    reset: 0xB7
+    rw: R/W
+
+  - reg: 0x1B
+    name: ODR_VAL_FLT_MID1
+    bits: {7: "ODR_VAL_FLT[23]", 6: "ODR_VAL_FLT[22]", 5: "ODR_VAL_FLT[21]", 4: "ODR_VAL_FLT[20]", 3: "ODR_VAL_FLT[19]", 2: "ODR_VAL_FLT[18]", 1: "ODR_VAL_FLT[17]", 0: "ODR_VAL_FLT[16]"}
+    reset: 0xCE
+    rw: R/W
+
+  - reg: 0x1C
+    name: ODR_VAL_FLT_MSB
+    bits: {7: "ODR_VAL_FLT[31]", 6: "ODR_VAL_FLT[30]", 5: "ODR_VAL_FLT[29]", 4: "ODR_VAL_FLT[28]", 3: "ODR_VAL_FLT[27]", 2: "ODR_VAL_FLT[26]", 1: "ODR_VAL_FLT[25]", 0: "ODR_VAL_FLT[24]"}
+    reset: 0x2B
+    rw: R/W
+
+  - reg: 0x1D
+    name: CHANNEL_ODR_SELECT
+    bits: {7: ODR_RATE_SEL_CH3, 6: ODR_RATE_SEL_CH2, 5: ODR_RATE_SEL_CH1, 4: ODR_RATE_SEL_CH0}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x1E
+    name: CHAN_DIG_FILTER_SEL
+    bits: {7: DIGFILTER_SEL_CH3, 6: DIGFILTER_SEL_CH2, 5: DIGFILTER_SEL_CH1, 4: DIGFILTER_SEL_CH0}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x1F
+    name: FIR_BW_SEL
+    bits: {7: Reserved, 6: Reserved, 5: WB_FILTER_SEL_CH3, 4: WB_FILTER_SEL_CH2, 3: WB_FILTER_SEL_CH1, 2: WB_FILTER_SEL_CH0}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x20
+    name: GPIO_DIR_CTRL
+    bits: {7: GPIO_IO_CONTROL, 6: GPIO_IO_CONTROL, 5: GPIO_IO_CONTROL, 4: GPIO_IO_CONTROL, 3: GPIO_IO_CONTROL, 2: GPIO_IO_CONTROL, 1: GPIO_IO_CONTROL, 0: GPIO_IO_CONTROL}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x21
+    name: GPIO_DATA
+    bits: {7: GPIO_DATA, 6: GPIO_DATA, 5: GPIO_DATA, 4: GPIO_DATA, 3: GPIO_DATA, 2: GPIO_DATA, 1: GPIO_DATA, 0: GPIO_DATA}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x22
+    name: ERROR_PIN_SRC_CONTROL
+    bits: {7: Reserved, 6: ERR_PIN_EN_OR_AIN, 5: ERR_PIN_EN_INTERNAL, 4: ERR_PIN_EN_SPI}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x23
+    name: ERROR_PIN_CONTROL
+    bits: {7: Reserved, 6: Reserved, 5: ERR_PIN_STATUS, 4: ERR_PIN_IN_EN, 3: ERR_PIN_OUT_EN}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x24
+    name: VCMBUF_CTRL
+    bits: {7: Reserved, 6: PWRDN_VCMBUF, 5: VCMBUF_REF_DIV_SEL, 4: VCMBUF_REF_SEL}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x25
+    name: DIAGNOSTIC_CONTROL
+    bits: {7: Reserved, 6: ERR_OR_AIN_EN, 5: Reserved, 4: MCLK_CNT_EN, 3: ERR_SPI_CRC_EN, 2: ERR_MM_CRC_EN, 1: FUSE_CRC_CHECK}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x26
+    name: MPC_CONFIG
+    bits: {7: MPC_CLKDEL_EN_CH3, 6: MPC_CLKDEL_EN_CH2, 5: MPC_CLKDEL_EN_CH1, 4: MPC_CLKDEL_EN_CH0}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x27
+    name: CH0_GAIN_LSB
+    bits: {7: "GAIN_CH0[7]", 6: "GAIN_CH0[6]", 5: "GAIN_CH0[5]", 4: "GAIN_CH0[4]", 3: "GAIN_CH0[3]", 2: "GAIN_CH0[2]", 1: "GAIN_CH0[1]", 0: "GAIN_CH0[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x28
+    name: CH0_GAIN_MID
+    bits: {7: "GAIN_CH0[15]", 6: "GAIN_CH0[14]", 5: "GAIN_CH0[13]", 4: "GAIN_CH0[12]", 3: "GAIN_CH0[11]", 2: "GAIN_CH0[10]", 1: "GAIN_CH0[9]", 0: "GAIN_CH0[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x29
+    name: CH0_GAIN_MSB
+    bits: {7: Reserved, 6: GAIN_CAL_SEL_CH0, 5: "GAIN_CH0[19]", 4: "GAIN_CH0[18]", 3: "GAIN_CH0[17]", 2: "GAIN_CH0[16]", 1: "GAIN_CH0[15]", 0: "GAIN_CH0[14]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x2A
+    name: CH0_OFFSET_LSB
+    bits: {7: "OFFSET_CH0[7]", 6: "OFFSET_CH0[6]", 5: "OFFSET_CH0[5]", 4: "OFFSET_CH0[4]", 3: "OFFSET_CH0[3]", 2: "OFFSET_CH0[2]", 1: "OFFSET_CH0[1]", 0: "OFFSET_CH0[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x2B
+    name: CH0_OFFSET_MID
+    bits: {7: "OFFSET_CH0[15]", 6: "OFFSET_CH0[14]", 5: "OFFSET_CH0[13]", 4: "OFFSET_CH0[12]", 3: "OFFSET_CH0[11]", 2: "OFFSET_CH0[10]", 1: "OFFSET_CH0[9]", 0: "OFFSET_CH0[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x2C
+    name: CH0_OFFSET_MSB
+    bits: {7: OFFSET_CAL_EN_CH0, 6: "OFFSET_CH0[22]", 5: "OFFSET_CH0[21]", 4: "OFFSET_CH0[20]", 3: "OFFSET_CH0[19]", 2: "OFFSET_CH0[18]", 1: "OFFSET_CH0[17]", 0: "OFFSET_CH0[16]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x2D
+    name: CH1_GAIN_LSB
+    bits: {7: "GAIN_CH1[7]", 6: "GAIN_CH1[6]", 5: "GAIN_CH1[5]", 4: "GAIN_CH1[4]", 3: "GAIN_CH1[3]", 2: "GAIN_CH1[2]", 1: "GAIN_CH1[1]", 0: "GAIN_CH1[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x2E
+    name: CH1_GAIN_MID
+    bits: {7: "GAIN_CH1[15]", 6: "GAIN_CH1[14]", 5: "GAIN_CH1[13]", 4: "GAIN_CH1[12]", 3: "GAIN_CH1[11]", 2: "GAIN_CH1[10]", 1: "GAIN_CH1[9]", 0: "GAIN_CH1[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x2F
+    name: CH1_GAIN_MSB
+    bits: {7: Reserved, 6: GAIN_CAL_SEL_CH1, 5: "GAIN_CH1[19]", 4: "GAIN_CH1[18]", 3: "GAIN_CH1[17]", 2: "GAIN_CH1[16]", 1: "GAIN_CH1[15]", 0: "GAIN_CH1[14]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x30
+    name: CH1_OFFSET_LSB
+    bits: {7: "OFFSET_CH1[7]", 6: "OFFSET_CH1[6]", 5: "OFFSET_CH1[5]", 4: "OFFSET_CH1[4]", 3: "OFFSET_CH1[3]", 2: "OFFSET_CH1[2]", 1: "OFFSET_CH1[1]", 0: "OFFSET_CH1[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x31
+    name: CH1_OFFSET_MID
+    bits: {7: "OFFSET_CH1[15]", 6: "OFFSET_CH1[14]", 5: "OFFSET_CH1[13]", 4: "OFFSET_CH1[12]", 3: "OFFSET_CH1[11]", 2: "OFFSET_CH1[10]", 1: "OFFSET_CH1[9]", 0: "OFFSET_CH1[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x32
+    name: CH1_OFFSET_MSB
+    bits: {7: OFFSET_CAL_EN_CH1, 6: "OFFSET_CH1[22]", 5: "OFFSET_CH1[21]", 4: "OFFSET_CH1[20]", 3: "OFFSET_CH1[19]", 2: "OFFSET_CH1[18]", 1: "OFFSET_CH1[17]", 0: "OFFSET_CH1[16]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x33
+    name: CH2_GAIN_LSB
+    bits: {7: "GAIN_CH2[7]", 6: "GAIN_CH2[6]", 5: "GAIN_CH2[5]", 4: "GAIN_CH2[4]", 3: "GAIN_CH2[3]", 2: "GAIN_CH2[2]", 1: "GAIN_CH2[1]", 0: "GAIN_CH2[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x34
+    name: CH2_GAIN_MID
+    bits: {7: "GAIN_CH2[15]", 6: "GAIN_CH2[14]", 5: "GAIN_CH2[13]", 4: "GAIN_CH2[12]", 3: "GAIN_CH2[11]", 2: "GAIN_CH2[10]", 1: "GAIN_CH2[9]", 0: "GAIN_CH2[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x35
+    name: CH2_GAIN_MSB
+    bits: {7: Reserved, 6: GAIN_CAL_SEL_CH2, 5: "GAIN_CH2[19]", 4: "GAIN_CH2[18]", 3: "GAIN_CH2[17]", 2: "GAIN_CH2[16]", 1: "GAIN_CH2[15]", 0: "GAIN_CH2[14]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x36
+    name: CH2_OFFSET_LSB
+    bits: {7: "OFFSET_CH2[7]", 6: "OFFSET_CH2[6]", 5: "OFFSET_CH2[5]", 4: "OFFSET_CH2[4]", 3: "OFFSET_CH2[3]", 2: "OFFSET_CH2[2]", 1: "OFFSET_CH2[1]", 0: "OFFSET_CH2[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x37
+    name: CH2_OFFSET_MID
+    bits: {7: "OFFSET_CH2[15]", 6: "OFFSET_CH2[14]", 5: "OFFSET_CH2[13]", 4: "OFFSET_CH2[12]", 3: "OFFSET_CH2[11]", 2: "OFFSET_CH2[10]", 1: "OFFSET_CH2[9]", 0: "OFFSET_CH2[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x38
+    name: CH2_OFFSET_MSB
+    bits: {7: OFFSET_CAL_EN_CH2, 6: "OFFSET_CH2[22]", 5: "OFFSET_CH2[21]", 4: "OFFSET_CH2[20]", 3: "OFFSET_CH2[19]", 2: "OFFSET_CH2[18]", 1: "OFFSET_CH2[17]", 0: "OFFSET_CH2[16]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x39
+    name: CH3_GAIN_LSB
+    bits: {7: "GAIN_CH3[7]", 6: "GAIN_CH3[6]", 5: "GAIN_CH3[5]", 4: "GAIN_CH3[4]", 3: "GAIN_CH3[3]", 2: "GAIN_CH3[2]", 1: "GAIN_CH3[1]", 0: "GAIN_CH3[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x3A
+    name: CH3_GAIN_MID
+    bits: {7: "GAIN_CH3[15]", 6: "GAIN_CH3[14]", 5: "GAIN_CH3[13]", 4: "GAIN_CH3[12]", 3: "GAIN_CH3[11]", 2: "GAIN_CH3[10]", 1: "GAIN_CH3[9]", 0: "GAIN_CH3[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x3B
+    name: CH3_GAIN_MSB
+    bits: {7: Reserved, 6: GAIN_CAL_SEL_CH3, 5: "GAIN_CH3[19]", 4: "GAIN_CH3[18]", 3: "GAIN_CH3[17]", 2: "GAIN_CH3[16]", 1: "GAIN_CH3[15]", 0: "GAIN_CH3[14]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x3C
+    name: CH3_OFFSET_LSB
+    bits: {7: "OFFSET_CH3[7]", 6: "OFFSET_CH3[6]", 5: "OFFSET_CH3[5]", 4: "OFFSET_CH3[4]", 3: "OFFSET_CH3[3]", 2: "OFFSET_CH3[2]", 1: "OFFSET_CH3[1]", 0: "OFFSET_CH3[0]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x3D
+    name: CH3_OFFSET_MID
+    bits: {7: "OFFSET_CH3[15]", 6: "OFFSET_CH3[14]", 5: "OFFSET_CH3[13]", 4: "OFFSET_CH3[12]", 3: "OFFSET_CH3[11]", 2: "OFFSET_CH3[10]", 1: "OFFSET_CH3[9]", 0: "OFFSET_CH3[8]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x3E
+    name: CH3_OFFSET_MSB
+    bits: {7: "OFFSET_CAL_EN_CH3", 6: "OFFSET_CH3[22]", 5: "OFFSET_CH3[21]", 4: "OFFSET_CH3[20]", 3: "OFFSET_CH3[19]", 2: "OFFSET_CH3[18]", 1: "OFFSET_CH3[17]", 0: "OFFSET_CH3[16]"}
+    reset: 0x00
+    rw: R/W
+
+  - reg: 0x3F
+    name: MCLK_COUNTER
+    bits: {7: "MCLK_COUNT[7]", 6: "MCLK_COUNT[6]", 5: "MCLK_COUNT[5]", 4: "MCLK_COUNT[4]", 3: "MCLK_COUNT[3]", 2: "MCLK_COUNT[2]", 1: "MCLK_COUNT[1]", 0: "MCLK_COUNT[0]"}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x40
+    name: DIG_FILTER_OFUF
+    bits: {7: "Reserved", 6: "Reserved", 5: "Reserved", 4: "Reserved", 3: "ERR_OFUF_CH3", 2: "ERR_OFUF_CH2", 1: "ERR_OFUF_CH1", 0: "ERR_OFUF_CH0"}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x41
+    name: DIG_FILTER_SETTLED
+    bits: {7: "Reserved", 6: "Reserved", 5: "Reserved", 4: "Reserved", 3: "CH3_SETTLED", 2: "CH2_SETTLED", 1: "CH1_SETTLED", 0: "CH0_SETTLED"}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x42
+    name: INTERNAL_ERROR
+    bits: {7: "Reserved", 6: "Reserved", 5: "Reserved", 4: "Reserved", 3: "ERR_DCLK", 2: "ERR_FUSE_CRC", 1: "ERR_ASRC", 0: "ERR_MM_CRC"}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x47
+    name: SPI_Error
+    bits: {7: "Reserved", 6: "Reserved", 5: "Reserved", 4: "Reserved", 3: "ERR_SPI_CRC", 2: "ERR_SPI_SCLK_CNT", 1: "ERR_SPI_WRITE", 0: "ERR_SPI_READ"}
+    reset: 0x00
+    rw: R
+
+  - reg: 0x48
+    name: AIN_OR_ERROR
+    bits: {7: "Reserved", 6: "Reserved", 5: "Reserved", 4: "Reserved", 3: "ERR_OR_AIN3", 2: "ERR_OR_AIN2", 1: "ERR_OR_AIN1", 0: "ERR_OR_AIN0"}
+    reset: 0x00
+    rw: R

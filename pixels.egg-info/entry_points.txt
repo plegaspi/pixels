@@ -1,0 +1,6 @@
+[console_scripts]
+pixels-daq = pixels.cli.daq:main
+pixels-udp-config = pixels.cli.udp_configure:main
+
+[gui_scripts]
+pixels-gui = pixels.gui:main_gui

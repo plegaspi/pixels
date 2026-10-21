@@ -1,0 +1,49 @@
+[project]
+name = "pixels"
+version = "2026.0.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "hdf5plugin",
+]
+keywords = []
+classifiers = [
+  "Programming Language :: Python"
+]
+authors = [
+  {name = "Pradyun Gedam", email = "pradyun@example.com"},
+  {name = "Tzu-Ping Chung", email = "tzu-ping@example.com"},
+]
+maintainers = [
+  {name = "Brett Cannon", email = "brett@example.com"}
+]
+
+[project.optional-dependencies]
+gui = []
+cli = []
+
+[project.scripts]
+pixels-udp-config = "pixels.cli.udp_configure:main"
+pixels-daq = "pixels.cli.daq:main"
+
+[project.gui-scripts]
+pixels-gui = "pixels.gui:main_gui"
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools]
+package-dir = {"pixels" = ""}
+packages = [
+  "pixels",
+  "pixels.cli",
+  "pixels.configs",
+  "pixels.control",
+  "pixels.control.comms",
+  "pixels.daq",
+  "pixels.gui",
+  "pixels.gui.layout",
+]

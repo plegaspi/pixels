@@ -1,0 +1,55 @@
+save_dir: ""
+
+app:
+  debug: false
+
+devices:
+  adx134:
+    enabled: true
+  ads1219:
+    enabled: true
+  rfsoc:
+    enabled: false
+
+adx134:
+  clock_gen:
+    odr_config: 0
+  registers:
+    active_cs:
+      - cs: 0
+        label: "AD4134 / CN0561"
+      - cs: 1
+        label: "AD7134 #1"
+      - cs: 2
+        label: "AD7134 #2"
+  capture:
+    mode: demod
+    demod_mode: true
+    n_chan_per_port: 28
+    samples_per_frame: 11
+    payload_bytes: 928
+    filter_type: sinc3
+    scratch_format: blosc_zstd
+    write_batch: 512
+    filename: capture.hdf5
+    v_ref: 4.096
+    resolution: 24
+
+ads1219:
+  channel_mask: 0x03
+  gain: 0
+  data_rate: 3
+
+connections:
+  adx134:
+    # One 10G link (SFP on QSFP lane 1).  Frame k of all four data streams
+    # arrives in one jumbo UDP datagram on this port (host MTU 9000 required);
+    # the same port is the command port and receives register-read replies.
+    eth0:
+      interface: enp10s0
+      host_ip: auto
+      remote_ip: 192.168.3.10
+      port: 1234
+  ads1219:
+    port: /dev/serial/by-id/usb-Silicon_Labs_CP2105_Dual_USB_to_UART_Bridge_Controller_01BDA05A-if01-port0
+    baud: 115200
